@@ -107,6 +107,7 @@ export const AdminSlipModal: React.FC<AdminSlipModalProps> = ({
                 onChange={(e) => setBookmaker(e.target.value as BookmakerCode)}
                 className="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2.5 text-white text-sm focus:border-emerald-500 outline-none"
               >
+                <option value="STAKE.COM">Stake.com</option>
                 <option value="SPORTYBET">SportyBet</option>
                 <option value="BET9JA">Bet9ja</option>
                 <option value="1XBET">1xBet</option>

@@ -12,6 +12,7 @@ export type SlipStatus =
   | 'VOID';
 
 export type BookmakerCode = 
+  | 'STAKE.COM'
   | 'SPORTYBET' 
   | 'BET9JA' 
   | '1XBET' 
@@ -55,6 +56,8 @@ export interface BettingSlip {
   isVip?: boolean;
   copiesCount: number;
   affiliateUrl?: string;
+  signupUrl?: string;
+  promoCode?: string;
   matches?: SlipMatch[];
   createdAt?: string;
   updatedAt?: string;

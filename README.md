@@ -1,6 +1,6 @@
 # ₦200 to win ₦200M — Sports Betting Web Platform
 
-A mobile-first, high-converting betting predictions and booking code distribution hub built for the Nigerian sports betting community (SportyBet, Bet9ja, 1xBet, BetKing, MSport).
+A mobile-first, high-converting betting predictions and booking code distribution hub built for the sports betting community (Stake.com, SportyBet, Bet9ja, 1xBet, BetKing, MSport).
 
 ---
 

@@ -6,6 +6,24 @@
 // Initial Seed Betting Slips (Stored in localStorage for persistence)
 const DEFAULT_SLIPS = [
   {
+    id: "slip-stake-100",
+    title: "Stake 100 Sharp Odds (Today's Games Only)",
+    category: "MEGA_ACCUMULATOR",
+    bookmaker: "STAKE.COM",
+    bookingCode: "sport:649599092",
+    totalOdds: 100.00,
+    stake: 200,
+    matchCount: 8,
+    kickoffTime: new Date(Date.now() + 3.5 * 60 * 60 * 1000).toISOString(), // Today's match
+    status: "PENDING",
+    isPinned: true,
+    isCutOne: false,
+    copiesCount: 1840,
+    affiliateUrl: "https://stake.com/sports/home?iid=sport%3A649599092&source=link_shared&modal=bet",
+    signupUrl: "https://stake.com/?c=Jareddad&offer=jareddad",
+    promoCode: "JAREDDAD"
+  },
+  {
     id: "slip-001",
     title: "Weekend 22-Fold Mega Accumulator (₦200 to ₦200M)",
     category: "MEGA_ACCUMULATOR",
@@ -16,7 +34,7 @@ const DEFAULT_SLIPS = [
     matchCount: 22,
     kickoffTime: new Date(Date.now() + 2.5 * 60 * 60 * 1000).toISOString(), // 2.5 hrs from now
     status: "PENDING",
-    isPinned: true,
+    isPinned: false,
     isCutOne: true,
     copiesCount: 842,
     affiliateUrl: "https://www.sportybet.com/ng/?ref=200to200m&code=BC892X"
@@ -102,9 +120,14 @@ class BettingHubApp {
   // Load slips from localStorage or use defaults
   loadSlips() {
     try {
-      const stored = localStorage.getItem("hub_slips_data_v1");
+      const stored = localStorage.getItem("hub_slips_data_v2");
       if (stored) {
-        return JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        // Guarantee Stake slip is always present at the top
+        if (!parsed.some(s => s.bookingCode === "sport:649599092" || s.id === "slip-stake-100")) {
+          parsed.unshift(DEFAULT_SLIPS[0]);
+        }
+        return parsed;
       }
     } catch (e) {
       console.warn("Could not read localStorage:", e);
@@ -114,7 +137,7 @@ class BettingHubApp {
 
   saveSlips() {
     try {
-      localStorage.setItem("hub_slips_data_v1", JSON.stringify(this.slips));
+      localStorage.setItem("hub_slips_data_v2", JSON.stringify(this.slips));
     } catch (e) {
       console.error("Could not write to localStorage:", e);
     }
@@ -354,7 +377,7 @@ class BettingHubApp {
     const isLost = slip.status === "LOST";
 
     // Bookmaker class styling
-    const bmClass = `bm-${slip.bookmaker.toLowerCase()}`;
+    const bmClass = `bm-${slip.bookmaker.toLowerCase().replace(/[^a-z0-9]/g, '')}`;
     
     // Category label
     let catClass = "cat-mega";
@@ -415,6 +438,17 @@ class BettingHubApp {
           </button>
         </div>
 
+        ${slip.promoCode ? `
+          <!-- Stake Partner In-Card Promo Bar -->
+          <div class="stake-card-addon">
+            <span>🎁 Stake Promo Code: <strong class="stake-promo-copy" data-promo="${slip.promoCode}" style="color: #00E701; cursor: pointer; padding: 2px 6px; border-radius: 4px; background: rgba(0, 231, 1, 0.15);" title="Click to copy promo code">${slip.promoCode}</strong></span>
+            <a href="${slip.signupUrl || 'https://stake.com/?c=Jareddad&offer=jareddad'}" target="_blank" rel="noopener noreferrer">
+              <span>Sign Up Account</span>
+              <i data-lucide="arrow-up-right" style="width: 13px; height: 13px;"></i>
+            </a>
+          </div>
+        ` : ""}
+
         <!-- Card Meta Row -->
         <div class="card-meta-row">
           <div class="meta-item">
@@ -465,6 +499,16 @@ class BettingHubApp {
         
         await this.copyToClipboard(code, bookmaker, btn);
         this.incrementCopyCount(slipId);
+      });
+    });
+
+    // Promo Code Copy Buttons
+    document.querySelectorAll(".stake-promo-copy, .stake-promo-code-btn").forEach(btn => {
+      btn.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const promo = btn.dataset.promo || "JAREDDAD";
+        await this.copyToClipboard(promo, "Stake Promo");
+        this.showToast(`Stake Promo Code "${promo}" copied to clipboard! 🎁`);
       });
     });
 
@@ -644,7 +688,11 @@ class BettingHubApp {
       isPinned,
       isCutOne,
       copiesCount: 0,
-      affiliateUrl: `https://${bookmaker.toLowerCase()}.com/ng/?ref=200to200m&code=${bookingCode}`
+      affiliateUrl: bookmaker === "STAKE.COM"
+        ? (bookingCode.toLowerCase().startsWith("sport:")
+            ? `https://stake.com/sports/home?iid=${encodeURIComponent(bookingCode)}&source=link_shared&modal=bet`
+            : `https://stake.com/?c=Jareddad&offer=jareddad`)
+        : `https://${bookmaker.toLowerCase()}.com/ng/?ref=200to200m&code=${bookingCode}`
     };
 
     // If new slip is pinned, unpin older slips

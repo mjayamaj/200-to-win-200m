@@ -426,6 +426,197 @@ body::before {
   transform: scale(0.98);
 }
 
+/* Stake.com Exclusive Partner Banner */
+.stake-partner-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(15, 33, 46, 0.98) 0%, rgba(10, 15, 26, 0.96) 100%);
+  border: 1px solid rgba(0, 231, 1, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px -5px rgba(0, 231, 1, 0.18);
+}
+
+.stake-card-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(0, 231, 1, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.stake-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stake-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0F212E;
+  border: 1px solid #00E701;
+  color: #00E701;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+}
+
+.stake-odds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.4);
+  color: var(--accent-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.stake-card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.stake-card-desc {
+  font-size: 0.78rem;
+  color: #BAC7D5;
+  line-height: 1.4;
+}
+
+.stake-promo-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px dashed rgba(0, 231, 1, 0.35);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  margin-top: 2px;
+}
+
+.stake-promo-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.stake-promo-code-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 231, 1, 0.12);
+  border: 1px solid #00E701;
+  color: #00E701;
+  font-family: monospace;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.stake-promo-code-btn:hover {
+  background: #00E701;
+  color: #0F212E;
+}
+
+.stake-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .stake-actions-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-stake-primary {
+  background: linear-gradient(135deg, #00E701 0%, #00B800 100%);
+  color: #07151D;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 231, 1, 0.3);
+  transition: var(--transition-fast);
+}
+
+.btn-stake-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-stake-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: white;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.btn-stake-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* In-Card Stake Extra Info */
+.stake-card-addon {
+  background: rgba(0, 231, 1, 0.05);
+  border: 1px solid rgba(0, 231, 1, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.stake-card-addon a {
+  color: #00E701;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stake-card-addon a:hover {
+  text-decoration: underline;
+}
+
 /* Category Filter Chips */
 .filter-section {
   margin-bottom: 18px;
@@ -634,6 +825,7 @@ body::before {
 .bm-1xbet { background: #1160AA; color: white; }
 .bm-betking { background: #0B3C84; color: #FFD700; }
 .bm-msport { background: #FF9800; color: #000; }
+.bm-stake, .bm-stakecom { background: #0F212E; color: #00E701; border: 1px solid rgba(0, 231, 1, 0.4); }
 
 /* Card Main Info */
 .card-title {

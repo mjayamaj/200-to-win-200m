@@ -22,6 +22,7 @@ create type slip_status as enum (
 );
 
 create type bookmaker_code as enum (
+  'STAKE.COM',
   'SPORTYBET', 
   'BET9JA', 
   '1XBET', 
@@ -43,6 +44,7 @@ create table public.bookmakers (
 -- Seed Bookmakers
 insert into public.bookmakers (code, name, brand_color, affiliate_url_template, app_scheme)
 values 
+  ('STAKE.COM', 'Stake.com', '#00E701', 'https://stake.com/?c=Jareddad&offer=jareddad', null),
   ('SPORTYBET', 'SportyBet', '#E50914', 'https://www.sportybet.com/ng/?ref=200to200m&code={CODE}', 'sportybet://loadslip?code={CODE}'),
   ('BET9JA', 'Bet9ja', '#008751', 'https://sports.bet9ja.com/?ref=200to200m&code={CODE}', 'bet9ja://loadslip?code={CODE}'),
   ('1XBET', '1xBet', '#1160AA', 'https://1xbet.ng/?ref=200to200m&code={CODE}', null),
