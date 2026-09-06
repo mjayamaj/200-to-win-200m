@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0A0D14">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>₦200 to win ₦200M | Daily Booking Codes & Accumulators</title>
+  <meta name="description" content="Official platform for the ₦200 to win ₦200M community. Daily verified booking codes for SportyBet, Bet9ja, 1xBet, Banker picks, and mega accumulators.">
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Ticker -->
+  <div class="ticker-bar">
+    <div class="ticker-content">
+      <span class="ticker-item"><span class="pulse-dot"></span> <b>LIVE:</b> 3 Slips Active for Today's Matches</span>
+      <span class="ticker-item">🔥 <b>YESTERDAY:</b> 4.85 Odds Banker LANDED 🏆</span>
+      <span class="ticker-item">⚡ <b>COMMUNITY:</b> 4,950+ Active Bettors on Telegram</span>
+      <span class="ticker-item">💰 <b>STAKE RULE:</b> Never stake what you can't afford to lose. ₦200 is always enough!</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-icon">₦</div>
+        <div class="brand-text">
+          <div class="brand-title">200 <span class="text-gradient">to 200M</span></div>
+          <div class="brand-subtitle">Official Betting Prediction Hub</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="adminToggleBtn" class="btn-icon" title="Admin Slip Dashboard" aria-label="Admin Dashboard">
+          <i data-lucide="shield-check"></i>
+          <span class="admin-badge-indicator"></span>
+        </button>
+        <a href="https://t.me/+GYo8-GqoBzlmNDA0" target="_blank" rel="noopener noreferrer" class="btn-tg-compact">
+          <i data-lucide="send"></i>
+          <span>Join VIP</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App Wrapper -->
+  <main class="main-content">
+    
+    <!-- Hero / Community Trust Banner -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <i data-lucide="zap"></i> VERIFIED COMMUNITY PICKS
+      </div>
+      <h1 class="hero-title">Turn <span class="highlight-stake">₦200</span> Into A Life Changing <span class="text-gradient">Jackpot</span></h1>
+      <p class="hero-desc">Daily vetted booking codes for SportyBet, Bet9ja & 1xBet. One-tap copy, zero fluff, transparent records.</p>
+      
+      <!-- Performance Analytics Quick Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value text-accent" id="statWinRate">79.2%</div>
+          <div class="stat-label">Win Rate (30D)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value text-gold" id="statSlipsWon">38/48</div>
+          <div class="stat-label">Slips Landed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value text-cyan" id="statOddsHit">18,420x</div>
+          <div class="stat-label">Total Odds Hit</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Telegram High-Converting Sticky Funnel Card -->
+    <section class="telegram-banner-card">
+      <div class="tg-card-glow"></div>
+      <div class="tg-card-content">
+        <div class="tg-icon-box">
+          <i data-lucide="send"></i>
+        </div>
+        <div class="tg-info">
+          <div class="tg-title">Never Miss Today's Code</div>
+          <div class="tg-desc">Join 4,950+ members receiving instant alerts 30 mins before major kickoffs.</div>
+        </div>
+      </div>
+      <a href="https://t.me/+GYo8-GqoBzlmNDA0" target="_blank" rel="noopener noreferrer" class="btn-tg-action">
+        <span>Join Free Channel</span>
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+    </section>
+
+    <!-- Slip Filters -->
+    <section class="filter-section">
+      <div class="filter-scroll">
+        <button class="filter-chip active" data-category="ALL">
+          <i data-lucide="layers"></i> All Slips
+        </button>
+        <button class="filter-chip" data-category="MEGA_ACCUMULATOR">
+          <i data-lucide="flame"></i> ₦200M Mega
+        </button>
+        <button class="filter-chip" data-category="BANKER">
+          <i data-lucide="target"></i> Banker (Safe)
+        </button>
+        <button class="filter-chip" data-category="OVER_UNDER">
+          <i data-lucide="goal"></i> Over / Under
+        </button>
+        <button class="filter-chip" data-category="ROLLOVER">
+          <i data-lucide="repeat"></i> Rollover
+        </button>
+        <button class="filter-chip" data-category="WON_ARCHIVE">
+          <i data-lucide="trophy"></i> Won Archive
+        </button>
+      </div>
+    </section>
+
+    <!-- Live Slips Feed Container -->
+    <section class="slips-container">
+      <div class="feed-header">
+        <div class="feed-title-wrap">
+          <h2 class="feed-title" id="feedTitleHeading">Active Booking Codes</h2>
+          <span class="active-count-badge" id="activeCountBadge">3 Active</span>
+        </div>
+        <button id="refreshFeedBtn" class="btn-refresh" title="Refresh Slips">
+          <i data-lucide="rotate-cw"></i>
+        </button>
+      </div>
+
+      <div id="slipsFeed" class="slips-grid">
+        <!-- Dynamically rendered slip cards injected by app.js -->
+      </div>
+    </section>
+
+    <!-- Responsible Gambling Note -->
+    <footer class="footer-notice">
+      <div class="notice-badge">18+ | BET RESPONSIBLY</div>
+      <p class="notice-text">
+        Sports betting contains financial risk. The "₦200 to ₦200M" principle advocates for disciplined micro-staking.
+        Never bet amounts that disrupt your financial well-being.
+      </p>
+      <div class="footer-links">
+        <span>© 2026 ₦200 to ₦200M Hub</span>
+        <span>•</span>
+        <a href="#rules" id="showRulesBtn">Staking Rules</a>
+        <span>•</span>
+        <a href="#disclaimer" id="showDisclaimerBtn">Disclaimer</a>
+        <span>•</span>
+        <a href="https://t.me/+GYo8-GqoBzlmNDA0" target="_blank" rel="noopener noreferrer">Telegram VIP</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Sticky Bottom Navigation for Mobile -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-nav="feed">
+      <i data-lucide="flame"></i>
+      <span>Slips</span>
+    </button>
+    <button class="nav-item" data-nav="bankers">
+      <i data-lucide="target"></i>
+      <span>Bankers</span>
+    </button>
+    <button class="nav-item" data-nav="tracker">
+      <i data-lucide="bar-chart-3"></i>
+      <span>Results</span>
+    </button>
+    <a href="https://t.me/+GYo8-GqoBzlmNDA0" target="_blank" rel="noopener noreferrer" class="nav-item highlight-nav">
+      <div class="nav-icon-circle">
+        <i data-lucide="send"></i>
+      </div>
+      <span>VIP Group</span>
+    </a>
+  </nav>
+
+  <!-- Admin Modal: Fast Slip Publisher (Under 60s) -->
+  <div id="adminModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-badge">ADMIN CONTROL</div>
+          <h3 class="modal-title">Publish New Betting Slip</h3>
+        </div>
+        <button id="closeAdminModal" class="btn-close" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <form id="slipForm" class="modal-body">
+        <div class="form-group">
+          <label for="slipTitle">Slip Title / Label</label>
+          <input type="text" id="slipTitle" placeholder="e.g. Saturday Super 22-Fold Longshot" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="slipCategory">Category</label>
+            <select id="slipCategory" required>
+              <option value="MEGA_ACCUMULATOR">₦200M Mega Accumulator</option>
+              <option value="BANKER">Daily Safe Banker</option>
+              <option value="OVER_UNDER">Over/Under Goals</option>
+              <option value="ROLLOVER">Rollover Challenge</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="slipBookmaker">Bookmaker</label>
+            <select id="slipBookmaker" required>
+              <option value="SPORTYBET">SportyBet</option>
+              <option value="BET9JA">Bet9ja</option>
+              <option value="1XBET">1xBet</option>
+              <option value="BETKING">BetKing</option>
+              <option value="MSPORT">MSport</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingCode">Booking Code</label>
+            <input type="text" id="bookingCode" placeholder="e.g. BC948X" style="text-transform: uppercase; font-weight: 700; letter-spacing: 1px;" required>
+          </div>
+          <div class="form-group">
+            <label for="totalOdds">Total Odds</label>
+            <input type="number" step="0.01" id="totalOdds" placeholder="e.g. 524.80" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="matchCount">Number of Matches</label>
+            <input type="number" id="matchCount" value="18" min="1" required>
+          </div>
+          <div class="form-group">
+            <label for="kickoffHours">Kickoff In (Hours)</label>
+            <input type="number" step="0.5" id="kickoffHours" value="2.5" required>
+          </div>
+        </div>
+
+        <div class="calc-preview-card">
+          <div class="calc-row">
+            <span>Staking:</span>
+            <span class="text-white font-bold">₦200</span>
+          </div>
+          <div class="calc-row">
+            <span>Est. Potential Return:</span>
+            <span class="text-accent font-bold" id="estReturnPreview">₦0.00</span>
+          </div>
+        </div>
+
+        <div class="form-checkbox-row">
+          <label class="checkbox-label">
+            <input type="checkbox" id="isPinned" checked>
+            <span>Pin as Featured Slip at Top</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="isCutOne">
+            <span>Includes Cut-1 / Cut-2 Bonus</span>
+          </label>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="cancelSlipBtn" class="btn-secondary">Cancel</button>
+          <button type="submit" class="btn-primary">
+            <i data-lucide="send"></i> Publish Slip Now
+          </button>
+        </div>
+      </form>
+
+      <!-- Quick Status Manager for Existing Slips in Modal -->
+      <div class="existing-slips-manager">
+        <h4 class="sub-heading">Manage Live Slips Status</h4>
+        <div id="adminSlipsList" class="admin-slips-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 3 Manual Copy Fallback Modal -->
+  <div id="copyFallbackModal" class="modal-backdrop">
+    <div class="modal-card modal-compact">
+      <div class="modal-header">
+        <h3 class="modal-title">Copy Booking Code</h3>
+        <button id="closeCopyModal" class="btn-close"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="text-muted">Tap and hold the code below to copy:</p>
+        <div class="manual-copy-box" id="manualCopyBox">CODE</div>
+        <button id="manualCopyBtn" class="btn-primary w-full mt-3">Select All Text</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Staking Rules / Disclaimer Modal -->
+  <div id="infoModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="infoModalTitle">Staking Discipline</h3>
+        <button id="closeInfoModal" class="btn-close"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body text-secondary" id="infoModalBody">
+        <!-- Populated on demand -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast">
+    <div class="toast-icon"><i data-lucide="check-circle-2"></i></div>
+    <div class="toast-message" id="toastMessage">Booking code copied to clipboard!</div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
